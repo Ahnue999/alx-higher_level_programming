@@ -32,7 +32,7 @@ int check_cycle(listint_t *list)
 	listint_t *current;
 	int i;
 
-	ptrarr = malloc(sizeof(listint_t) * 1024);
+	ptrarr = malloc(sizeof(listint_t) * 128);
 	
 	current = list;
 	i = 0;
