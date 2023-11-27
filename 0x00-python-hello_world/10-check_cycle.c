@@ -39,7 +39,10 @@ int check_cycle(listint_t *list)
 	while (current->next)
 	{
 		if (check_repeat(current, ptrarr, i))
+		{
+			free(ptrarr);
 			return (1);
+		}
 		ptrarr[i] = current;
 		current = current->next;
 			i++;
