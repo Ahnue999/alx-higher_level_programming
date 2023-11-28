@@ -10,14 +10,15 @@ if number < 0:
     minus = True
     number = number * -1
 
-l = number % 10
+last = number % 10
 if minus:
-    l = l * -1
+    last = last * -1
 
+print("is {:d}".format(last), end=" ")
 
-if l > 5:
+if last > 5:
     print("and is greater than 5")
-elif l == 0:
+elif last == 0:
     print("and is 0")
-elif l < 6:
-        print("and is less than 6 and not 0")
+elif last < 6:
+    print("and is less than 6 and not 0")
