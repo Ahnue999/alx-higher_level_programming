@@ -1,20 +1,13 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-# YOUR CODE HERE
-minus = False
-
-print("Last digit of {:d}".format(number), end=" ")
 
 if number < 0:
-    minus = True
-    number = number * -1
+    last = number % -10
+else:
+    last = number % 10
 
-last = number % 10
-if minus:
-    last = last * -1
-
-print("is {:d}".format(last), end=" ")
+print("Last digit of {:d} is {:d}".format(number, last), end=" ")
 
 if last > 5:
     print("and is greater than 5")
