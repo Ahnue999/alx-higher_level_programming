@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * insert_node - inserts a node to a sorted list.
@@ -19,14 +20,21 @@ listint_t *insert_node(listint_t **head, int number)
 	if (!*head)
 	{
 		*head = new;
-		return (*head)
+		return (*head);
 	}
 
 	curr = *head;
-	after = (*head)->next
+	after = (*head)->next;
+
+	if (new->n < curr->n)
+	{
+		new->next = curr;
+		*head = new;
+		return (new);
+	}
 	while (after)
 	{
-		if (new->n <= curr->n && new->n <= after->n)
+		if (new->n >= curr->n && new->n <= after->n)
 		{
 			curr->next = new;
 			new->next = after;
