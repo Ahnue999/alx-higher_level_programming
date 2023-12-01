@@ -5,4 +5,4 @@ if __name__ == "__main__":
         if file.startswith("__"):
             continue
         else:
-            print(name)
+            print(file)
