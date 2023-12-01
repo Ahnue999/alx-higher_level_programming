@@ -15,4 +15,4 @@ if __name__ == "__main__":
         else:
             print(":")
             for i in range(1, args + 1):
-               print("{:d}: {:s}".format(i, sys.argv[i]))
+                print("{:d}: {:s}".format(i, sys.argv[i]))
