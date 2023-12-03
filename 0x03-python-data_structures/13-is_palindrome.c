@@ -29,7 +29,7 @@ listint_t *listidx(listint_t *head, int idx)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t* curr;
+	listint_t *curr;
 	int i, length;
 
 	curr = *head;
