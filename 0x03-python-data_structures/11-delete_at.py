@@ -10,4 +10,6 @@ def delete_at(my_list=[], idx=0):
             continue
         new.append(my_list[i])
 
-    return new
+    my_list[:] = new
+
+    return my_list
