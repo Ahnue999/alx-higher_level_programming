@@ -37,7 +37,7 @@ int is_palindrome(listint_t **head)
 		curr = curr->next;
 
 	curr = *head;
-	for (i = 0; i < (length / 2); i++)
+	for (i = 0; i < ((length - 1) / 2); i++)
 	{
 		if (curr->n != listidx(*head, length - i - 1)->n)
 			return (0);
