@@ -11,7 +11,7 @@ void print_python_list_info(PyObject *p)
 {
 	long int size, i;
 	PyListObject *list;
-	PyObject *item;
+	PyObject *memb;
 
 
 	size = Py_SIZE(p);
@@ -24,7 +24,7 @@ void print_python_list_info(PyObject *p)
 
 	for (i = 0; i < size; i++)
 	{
-		item = PyList_GetItem(p, i);
-		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+		memb = PyList_GetItem(p, i);
+		printf("Element %ld: %s\n", i, Py_TYPE(memb)->tp_name);
 	}
 }
