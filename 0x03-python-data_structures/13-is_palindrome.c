@@ -1,12 +1,19 @@
-include "lists.h"
+#include "lists.h"
 
-listint_t *listidx(listint_t *head, idx)
+/**
+ * listidx - gets the list member at a certain index.
+ * @head: the list's head pointer.
+ * @idx: the index to get.
+ *
+ * Return: a pointer to the list member at idx.
+ */
+listint_t *listidx(listint_t *head, int idx)
 {
 	listint_t *curr;
 	int i;
 
 	curr = head;
-	for (i = 0; i < idx, curr; i++)
+	for (i = 0; i < idx && curr; i++)
 	{
 		curr = curr->next;
 	}
@@ -14,6 +21,12 @@ listint_t *listidx(listint_t *head, idx)
 	return (curr);
 }
 
+/**
+ * is_palindrome - checks whether a list is palindrome or not.
+ * @head: the list's head pointer.
+ *
+ * Return: 1 if palindrom and 0 if not.
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t* curr;
@@ -24,10 +37,11 @@ int is_palindrome(listint_t **head)
 		curr = curr->next;
 
 	curr = *head;
-	for (i = 0; i < length / 2; i++)
+	for (i = 0; i < (length / 2); i++)
 	{
-		if curr->next != listidx(*head, length - i)->n
+		if (curr->n != listidx(*head, length - i - 1)->n)
 			return (0);
+		curr = curr->next;
 	}
 	return (1);
 }
