@@ -9,27 +9,34 @@ class Square:
         self.__size = size
         self.__position = position
 
-    def __getattr__(self, name):
-        """get attributes"""
-        return self.__dict__[f"__{name}"]
+        @property
+        def size(self):
+            """get size"""
+            return (self.__size)
 
-    def __setattr__(self, name, value):
-        """set values"""
-        if name == "__size":
-            if type(value) == int:
-                if value >= 0:
-                    self.__size = value
-                else:
-                    raise ValueError("size must be >= 0")
-            else:
+        @size.setter
+        def size(self, value):
+            if not isinstance(value, int):
                 raise TypeError("size must be an integer")
-        if name == "__position":
-            if type(value) != tuple or (type(value[0]) != int or type(value[1]) != int):
-                    raise TypeError("position must be a tuple of 2 positive integers")
-        self.__dict__[f"__{name}"] = value
+            elif value < 0:
+                raise ValueError("size must be >= 0")
+            self.__size = value
+
+        @property
+        def position(self):
+            """Get/set the current position of the square."""
+            return (self.__position)
+
+        @position.setter
+        def position(self, value):
+            if (not isinstance(value, tuple) or len(value) != 2 or
+                    not all(isinstance(num, int) for num in value) or
+                    not all(num >= 0 for num in value)):
+                raise TypeError("position must be a tuple of 2 positive integers")
+            self.__position = value
 
     def area(self):
-        """A method that returns the are of a square"""
+        """A method that returns the area of a square"""
         return (self.__size ** 2)
 
     def my_print(self):
