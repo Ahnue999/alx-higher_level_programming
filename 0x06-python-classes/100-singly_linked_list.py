@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """a linked list class."""
 
+
 class Node:
     def __init__(self, data, next_node=None):
         """initialaizing the class"""
@@ -30,6 +31,7 @@ class Node:
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     def __init__(self):
