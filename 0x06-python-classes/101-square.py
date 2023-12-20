@@ -57,6 +57,7 @@ class Square:
             print()
 
     def __str__(self):
+        """ for print() """
 
         ret = []
         for i in range(0, self.__position[1]):
