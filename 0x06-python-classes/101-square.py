@@ -55,3 +55,17 @@ class Square:
             for j in range(self.__size):
                 print("#", end="")
             print()
+
+    def __str__(self):
+
+        ret = []
+        for i in range(0, self.__position[1]):
+            ret.append('\n')
+        for i in range(self.__size):
+            for k in range(self.__position[0]):
+                ret.append(' ')
+            for j in range(self.__size):
+                ret.append('#')
+            if i < self.__size - 1:
+                ret.append('\n')
+        return "".join(ret)
