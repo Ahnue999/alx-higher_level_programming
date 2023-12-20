@@ -47,7 +47,7 @@ class Square:
             print()
             return
 
-        for i in range(slef.position[1]):
+        for i in range(self.__position[1]):
             print()
         for i in range(self.__size):
             for k in range(self.__position[0]):
