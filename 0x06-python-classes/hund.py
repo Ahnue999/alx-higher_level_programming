@@ -59,11 +59,14 @@ class Square:
     def __str__(self):
         """ for print() """
 
-        if self.__size != 0:
-            [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            if i != self.__size - 1:
-                print("")
-        return ("")
+        ret = []
+        for i in range(0, self.__position[1]):
+            ret.append('\n')
+        for i in range(self.__size):
+            for k in range(self.__position[0]):
+                ret.append(' ')
+            for j in range(self.__size):
+                ret.append('#')
+            if i < self.__size - 1:
+                ret.append('\n')
+        return "".join(ret)
