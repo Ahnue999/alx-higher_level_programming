@@ -2,7 +2,8 @@
 """LOCKED
 """
 
+
 class LockedClass:
     """LOCKED
     """
-    __slots__= ['first_name']
+    __slots__ = ['first_name']
