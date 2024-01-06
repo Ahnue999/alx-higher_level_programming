@@ -3,7 +3,7 @@
 # Checking normal behaviour:
 >>> a = [[2, 4, 6], [10, 20, 30]]
 >>> matrix_divided(a, 2)
-[[1, 2, 3], [5, 10, 15]]
+[[1.0, 2.0, 3.0], [5.0, 10.0, 15.0]]
 
 # Checking Empty lists:
 >>> a = []

@@ -13,12 +13,12 @@ My name is Mohamed Abdalah
 
 Wrong type first name:
 >>> say_my_name(20, "Abdalah")
-traceback (most recent call last):
+Traceback (most recent call last):
 	...
 TypeError: first_name must be a string
 
 Wrong type last name:
 >>> say_my_name("Mohamed", 20)
-traceback (most recent call last):
+Traceback (most recent call last):
 	...
 TypeError: last_name must be a string
