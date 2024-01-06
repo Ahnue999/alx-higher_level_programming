@@ -1,0 +1,13 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Checking normal behaviour:
+>>> a = [[2, 4, 6], [10, 20, 30]]
+>>> matrix_divided(a, 2)
+[[1, 2, 3], [5, 10, 15]]
+
+# Checking Empty lists:
+>>> a = []
+>>> matrix_divided(a, 2)
+[]
+
+
