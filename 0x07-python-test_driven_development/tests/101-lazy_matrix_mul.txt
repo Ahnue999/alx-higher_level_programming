@@ -13,8 +13,8 @@ Two matrices multiplication 0
 	>>> a = [[1, 2], [3, 4]]
 	>>> b = [[1, 2], [3, 4]]
 	>>> matrix_mul(a, b)
-	array([[7, 10],
-		   [15, 22]])
+        array([[ 7, 10],
+	       [15, 22]])
 
 Two matrices multiplication 1
 
@@ -26,9 +26,9 @@ Two matrices multiplication 2
     >>> list1 = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     >>> list2 = [[1, -1, 2], [2, -1, 2], [3, -3, 0]]
     >>> matrix_mul(list1, list2)
-    array([[30, -26, 10],
-		   [36, -31, 14],
-		   [42, -36, 18]])
+    array([[ 30, -26,  10],
+           [ 36, -31,  14],
+           [ 42, -36,  18]])
 
 Two matrices multiplication 3
 
