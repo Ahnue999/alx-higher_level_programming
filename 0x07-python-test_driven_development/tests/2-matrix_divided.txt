@@ -45,3 +45,10 @@ Passing None:
 	Traceback (most recent call last):
 		...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+One row is an integer:
+	>>> a = [[2, 1], [4, 1], 4]
+	>>> matrix_divided(a, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats

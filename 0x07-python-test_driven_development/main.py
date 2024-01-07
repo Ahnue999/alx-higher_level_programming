@@ -1,16 +1,5 @@
 #!/usr/bin/python3
-print_square = __import__('4-print_square').print_square
+matrix_mul = __import__('100-matrix_mul').matrix_mul
 
-print_square(4)
-print("")
-print_square(10)
-print("")
-print_square(0)
-print("")
-print_square(1)
-print("")
-try:
-    print_square(-1)
-except Exception as e:
-    print(e)
-print("")
+print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
