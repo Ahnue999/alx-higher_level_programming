@@ -14,7 +14,7 @@ Two matrices multiplication 0
 	>>> b = [[1, 2], [3, 4]]
 	>>> matrix_mul(a, b)
 	array([[7, 10],
-		   [15, 22]])
+	[15, 22]])
 
 Two matrices multiplication 1
 
