@@ -4,7 +4,7 @@
 def matrix_divided(matrix, div):
     """matrix divided"""
     if not matrix:
-        return []
+        matrix = [['a']]
 
     if not isinstance(div, (int, float)):
         raise TypeError("div most be a numebr")

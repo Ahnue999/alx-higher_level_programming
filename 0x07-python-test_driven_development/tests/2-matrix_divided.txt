@@ -1,13 +1,47 @@
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+The ```2-matrix_divided``` module
+===============================
 
-# Checking normal behaviour:
->>> a = [[2, 4, 6], [10, 20, 30]]
->>> matrix_divided(a, 2)
-[[1.0, 2.0, 3.0], [5.0, 10.0, 15.0]]
+Using ```matrix_divided```
+--------------------------
 
-# Checking Empty lists:
->>> a = []
->>> matrix_divided(a, 2)
-[]
+Importing the function from the module:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
+Checking normal behaviour:
+	>>> a = [[2, 4, 6], [10, 20, 30]]
+	>>> matrix_divided(a, 2)
+	[[1.0, 2.0, 3.0], [5.0, 10.0, 15.0]]
 
+Checking Empty lists:
+	>>> a = []
+	>>> matrix_divided(a, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division by zero:
+	>>> a = [[2, 4, 1], [3, 1, 5]]
+	>>> matrix_divided(a, 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
+
+Inequally sized rows:
+	>>> a = [[3, 1], [2, 1, 4]]
+	>>> matrix_divided(a, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+String in list:
+	>>> a = [[2, 1], ['l', 1]]
+	>>> matrix_divided(a, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Passing None:
+	>>> matrix_divided(None, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
