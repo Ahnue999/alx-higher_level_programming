@@ -13,24 +13,24 @@ Two matrices multiplication 0
 	>>> a = [[1, 2], [3, 4]]
 	>>> b = [[1, 2], [3, 4]]
 	>>> matrix_mul(a, b)
-	[[7, 10], [15, 22]]
+	array([[7, 10], [15, 22]])
 
 Two matrices multiplication 1
 
     >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
-    [[13, 16]]
+    array([[13, 16]])
 
 Two matrices multiplication 2
 
     >>> list1 = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     >>> list2 = [[1, -1, 2], [2, -1, 2], [3, -3, 0]]
     >>> matrix_mul(list1, list2)
-    [[30, -26, 10], [36, -31, 14], [42, -36, 18]]
+    array([[30, -26, 10], [36, -31, 14], [42, -36, 18]])
 
 Two matrices multiplication 3
 
     >>> matrix_mul([[1, 5, 7]], [[3], [5], [8]])
-    [[84]]
+    array([[84]])
 
 Passing None as a matrix
 
@@ -126,11 +126,11 @@ Missing one argument
     >>> matrix_mul([[1, 2]])
     Traceback (most recent call last):
     	            ...
-    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
 Missing arguments
 
     >>> matrix_mul()
     Traceback (most recent call last):
     	            ...
-    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
