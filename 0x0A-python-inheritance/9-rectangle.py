@@ -4,6 +4,7 @@
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """ Rectangle class """
 
@@ -14,7 +15,6 @@ class Rectangle(BaseGeometry):
         BaseGeometry.integer_validator(self, "height", height)
         self.__height = height
 
-    
     def area(self):
         """ for area """
         return self.__width * self.__height
