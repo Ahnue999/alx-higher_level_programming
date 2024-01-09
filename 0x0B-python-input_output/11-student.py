@@ -25,7 +25,7 @@ class Student:
                 data = self.__dict__.copy()
 
         return data
-    
+
     def reload_from_json(self, json):
         """ replaces all attributres of student """
 
