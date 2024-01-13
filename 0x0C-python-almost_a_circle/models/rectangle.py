@@ -87,10 +87,28 @@ class Rectangle(Base):
 
     def __str__(self):
         """str representation"""
-        return (f"[Rectangle] {self.id} {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update func """
+        if args != ():
+            attrs = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                self.__dict__[attrs[i] if attrs[i] == "id" else "_Rectangle__" + attrs[i]] = args[i]
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                if key != "id":
+                    key = "_Rectangle__" + key
+                self.__dict__[key] = value
+
+    def to_dictionary(self):
+        """ to dict """
+
+        new = dict() 
+
         attrs = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            self.__dict__[attrs[i]] = args[i]
+
+        for attr in attrs:
+            new[attr] = self.__dict__[attr if attr == "id" else "_Rectangle__" + attr]
+
+        return new
