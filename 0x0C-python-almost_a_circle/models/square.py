@@ -45,7 +45,6 @@ class Square(Rectangle):
                 else:
                     self.__dict__[key] = value
 
-
     def to_dictionary(self):
         """ to dict """
 
