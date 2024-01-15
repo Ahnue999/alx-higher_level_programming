@@ -9,7 +9,7 @@ class Rectangle(Base):
     """ a rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ init """
+        """ init func """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -18,12 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ width """
+        """ width setter """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ width """
+        """ width setter """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -32,12 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ height """
+        """ height getter """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ height """
+        """ height setter """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -46,12 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ x """
+        """ x getter """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ x """
+        """ x setter """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -60,12 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ y """
+        """ y getter """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ y """
+        """ y setter """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -73,11 +73,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ area """
+        """ area func """
         return self.__height * self.__width
 
     def display(self):
-        """ display """
+        """ display func """
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -86,7 +86,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """str representation"""
+        """str representation """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
                 f" - {self.__width}/{self.__height}")
 
