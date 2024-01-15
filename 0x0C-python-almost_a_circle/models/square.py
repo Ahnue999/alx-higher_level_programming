@@ -59,6 +59,9 @@ class Square(Rectangle):
             if attr == "size":
                 new[attr] = self.__dict__["_Rectangle__width"]
             else:
-                new[attr] = self.__dict__[attr if attr == "id" else "_Rectangle__" + attr]
+                if attr == "id":
+                    new[attr] = self.__dict__[attr]
+                else:
+                    new[attr] = self.__dict__["_Rectangle__" + attr]
 
         return new
