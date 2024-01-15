@@ -4,6 +4,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -74,7 +75,7 @@ class Base:
 
         try:
             with open(filename, encoding='utf=8') as fp:
-                
+
                 objlist = list()
                 instances = fp.readlines()
                 for line in instances:
@@ -123,3 +124,41 @@ class Base:
                 return objlist
         except IOError:
             return []
+
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draws using turtle module
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#a6332c")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()

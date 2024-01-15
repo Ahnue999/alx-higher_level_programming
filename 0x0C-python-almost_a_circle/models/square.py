@@ -32,7 +32,10 @@ class Square(Rectangle):
         if args != ():
             attrs = ["id", "width", "x", "y"]
             for i in range(len(args)):
-                self.__dict__[attrs[i] if attrs[i] == "id" else "_Rectangle__" + attrs[i]] = args[i]
+                if attrs[i] == "id":
+                    self.__dict__[attrs[i]] = args[i]
+                else:
+                    self.__dict__["_Rectangle__" + attrs[i]] = args[i]
                 if attrs[i] == "width":
                     self.__dict__["_Rectangle__height"] = args[i]
         elif kwargs is not None:
@@ -48,7 +51,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ to dict """
 
-        new = dict() 
+        new = dict()
 
         attrs = ["id", "size", "x", "y"]
 
