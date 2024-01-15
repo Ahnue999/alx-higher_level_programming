@@ -94,6 +94,9 @@ class Base:
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline='', encoding='utf-8') as fp:
 
+            if not list_objs or list_objs == []:
+                fp.write("[]")
+                return
             writer = csv.writer(fp, delimiter=',')
             for obj in list_objs:
                 ls = obj.to_dictionary().values()
