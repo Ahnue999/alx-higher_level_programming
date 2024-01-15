@@ -92,30 +92,47 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update func """
-        if args != ():
-            attrs = ["id", "width", "height", "x", "y"]
-            for i in range(len(args)):
-                if attrs[i] == "id":
-                    self.__dict__[attrs[i]] = args[i]
-                else:
-                    self.__dict__["_Rectangle__" + attrs[i]] = args[i]
-        elif kwargs is not None:
+
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
+        elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key != "id":
-                    key = "_Rectangle__" + key
-                self.__dict__[key] = value
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """ to dict """
 
-        new = dict()
-
-        attrs = ["id", "width", "height", "x", "y"]
-
-        for attr in attrs:
-            if attr == "id":
-                new[attr] = self.__dict__[attr]
-            else:
-                new[attr] = self.__dict__["_Rectangle__" + attr]
-
-        return new
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
