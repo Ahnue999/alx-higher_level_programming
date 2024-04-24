@@ -2,7 +2,7 @@
 
 
 def list_division(my_list_1, my_list_2, list_length):
-    """ 
+    """
     divides to each element of list 1 to its corresponding element
     in list 2, printing "wrong type", "division by 0", "out of ra-
     nge whenever suitable (replacing the result with the number 0)
