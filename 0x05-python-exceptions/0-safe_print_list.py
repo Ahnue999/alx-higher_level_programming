@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
     """
     Prints all elements of a list and returns the count of numbers printed
     """
-    
+
     count = 0
 
     try:
