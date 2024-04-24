@@ -133,12 +133,25 @@ class Base:
         """ draws using turtle module
         """
         turt = turtle.Turtle()
-        turt.screen.bgcolor("#a6332c")
+        turt.screen.bgcolor("#d2131b")
         turt.pensize(3)
         turt.shape("turtle")
 
-        turt.color("#ffffff")
+        turt.color("#f1f1f1")
         for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for j in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#2225f1")
+        for rect in list_squares:
             turt.showturtle()
             turt.up()
             turt.goto(rect.x, rect.y)
@@ -147,7 +160,8 @@ class Base:
                 turt.forward(rect.width)
                 turt.left(90)
                 turt.forward(rect.height)
-                turt.left(90)
+                #turt.left(90)
+                turt.right(90)
             turt.hideturtle()
 
         turtle.exitonclick()
