@@ -1,2 +1,2 @@
 -- Creates a database only if it is missing.
-CREATE OR REPLACE DATABASE hbtn_0c_0;
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
