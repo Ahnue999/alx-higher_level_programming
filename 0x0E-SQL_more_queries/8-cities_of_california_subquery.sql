@@ -1,5 +1,5 @@
 -- list the cities of california.
 SELECT cities.id AS id, cities.name AS name
 FROM cities, states
-WHERE states.name = california
+WHERE states.id = cities.id
 ORDER BY cities.id
